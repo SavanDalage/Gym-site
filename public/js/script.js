@@ -42,11 +42,17 @@ function handleIntersect(entries) {
     "only screen and (max-height: 500px)"
   ).matches;
 
+  const isNarrowScreen = matchMedia(
+    "only screen and (max-width: 800px)"
+  ).matches;
+
   entries.forEach((entry) => {
     const ratio = entry.intersectionRatio;
     let opacity;
     if (isSmallScreen) {
-      opacity = ratio > 0.4 ? 1 : ratio * 5; // Full opacity if more than 20% visible
+      opacity = ratio > 0.1 ? 1 : ratio * 10; // Full opacity if more than 10% visible
+    } else if (isNarrowScreen) {
+      opacity = ratio > 0.05 ? 1 : ratio * 10; // Adjust for tall pages on narrow screens
     } else {
       opacity = Math.min(ratio * 2, 1); // Calculate opacity based on intersection ratio
     }
@@ -59,8 +65,10 @@ function createObservers() {
   let threshold;
   if (matchMedia("only screen and (max-height: 500px)").matches) {
     threshold = 0.1; // Trigger kiedy 10% jest widoczne
+  } else if (matchMedia("only screen and (max-width: 800px)").matches) {
+    threshold = 0.05; // Trigger when 5% is visible for narrow screens
   } else {
-    threshold = 0.3; // Trigger kiedy 30% jest widoczne
+    threshold = 0.5; // Trigger kiedy 50% jest widoczne
   }
 
   // Create Intersection Observer with the determined threshold
