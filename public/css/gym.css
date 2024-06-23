@@ -95,7 +95,7 @@ body {
   object-fit: cover;
   z-index: 2;
   position: fixed;
-  overflow: scroll;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   left: 0px;
   top: 0px;

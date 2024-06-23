@@ -45,6 +45,17 @@ function handleIntersect(entries) {
 }
 
 // tworzy Intersection Observer
+
+if (matchMedia("only screen and (min-height: 500px)").matches) {
+  var observer = new IntersectionObserver(intersectionCallback, {
+    threshold: 0.3, // Trigger kiedy 50% jest widoczne
+  });
+} else {
+  var observer = new IntersectionObserver(intersectionCallback, {
+    threshold: 0.5, // Trigger kiedy 50% jest widoczne
+  });
+}
+
 var observer = new IntersectionObserver(intersectionCallback, {
   threshold: 0.3, // Trigger kiedy 50% jest widoczne
 });
