@@ -60,7 +60,7 @@ function createObservers() {
   if (matchMedia("only screen and (max-height: 500px)").matches) {
     threshold = 0.1; // Trigger kiedy 10% jest widoczne
   } else {
-    threshold = 0.5; // Trigger kiedy 50% jest widoczne
+    threshold = 0.3; // Trigger kiedy 30% jest widoczne
   }
 
   // Create Intersection Observer with the determined threshold
