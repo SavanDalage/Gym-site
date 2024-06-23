@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Gym</title>
+
+    <link rel="stylesheet" href="css/gym.css" />
+
+    <link rel="preload" as="image" href="img/f00.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f01.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f02.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f03.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f04.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f05.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f06.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f07.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f08.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f09.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f10.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f11.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f12.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f13.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="img/f14.jpg" fetchpriority="high" />
+  </head>
+
+  <body>
+    <div class="sidebar"></div>
+    <div class="container">
+      <nav class="side-navigation-bar">
+        <div type="button" class="navigation-button highlighted" id="b1">
+          Trener
+        </div>
+        <div type="button" class="navigation-button" id="b2">Plan</div>
+        <div type="button" class="navigation-button" id="b3">Sprzęt</div>
+        <div type="button" class="navigation-button" id="b4">Cennik</div>
+      </nav>
+
+      <div class="page" id="p1">
+        <div class="hero-box">
+          <h1 class="mainheading">Twój trener personalny</h1>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
+            nulla eos illum, exercitationem id ex, labore doloremque adipisci
+            facilis laborum unde enim, modi asperiores ratione excepturi magnam
+            nobis? Doloribus, distinctio.
+          </p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
+            nulla eos illum, exercitationem id ex, labore doloremque adipisci
+            facilis laborum unde enim, modi asperiores ratione excepturi magnam
+            nobis? Doloribus, distinctio.
+          </p>
+          <div
+            class="button-main but1"
+            type="button"
+            onclick="document.getElementById(`p2`).scrollIntoView();"
+          >
+            ZACZNIJ &darr;
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="p2">
+        <div class="mainheading page-heading">Twój plan</div>
+        <div class="page2-text-box">
+          <div class="page2-step-box">
+            <p class="subheading">Krok 1</p>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              deserunt dolor odio sunt illo autem eaque doloremque ratione vel
+              hic consequuntur quos laudantium, quaerat, nulla beatae distinctio
+              voluptates exercitationem rem? Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Est, sed enim doloribus eligendi
+              ducimus dolor optio ad distinctio deserunt quasi, excepturi
+              expedita, porro repellendus? Quidem repellat obcaecati ratione
+              eaque minus.
+            </p>
+          </div>
+          <div class="page2-step-box">
+            <p class="subheading">Krok 2</p>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              deserunt dolor odio sunt illo autem eaque doloremque ratione vel
+              hic consequuntur quos laudantium, quaerat, nulla beatae distinctio
+              voluptates exercitationem rem?
+            </p>
+          </div>
+          <div class="page2-step-box">
+            <p class="subheading">Krok 3</p>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              deserunt dolor odio sunt illo autem eaque doloremque ratione vel
+              hic consequuntur quos laudantium, quaerat, nulla beatae distinctio
+              voluptates exercitationem rem?
+            </p>
+          </div>
+        </div>
+        <div class="p2-buttons-box">
+          <div
+            class="button-main but2"
+            type="button"
+            onclick="document.getElementById('for').classList.toggle(`open`);"
+          >
+            Zapisz się
+          </div>
+          <div
+            class="button-main but3"
+            type="button"
+            onclick="document.getElementById('gall').classList.toggle(`open`);"
+          >
+            Galeria
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="p3">
+        <div class="mainheading margin-left-right heading">Sprzęt</div>
+        <p class="text margin-left-right">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, sed
+          enim doloribus eligendi ducimus dolor optio ad distinctio deserunt
+          quasi, excepturi expedita, porro repellendus? Quidem repellat
+          obcaecati ratione eaque minus.
+        </p>
+        <p class="text margin-left-right bold">
+          Najedź na wybrany sprzęt i kliknij
+        </p>
+        <div class="window-gear">
+          <div class="img-container">
+            <img class="gear-img" src="img/i00.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i01.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i02.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i03.jpg" loading="lazy" />
+          </div>
+          <div class="img-container">
+            <img class="gear-img" src="img/i05.jpg" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="p4">
+        <div class="inner"><h1>Page 4</h1></div>
+      </div>
+      <footer class="footer">
+        <p class="text">Autor: Krzysztof Kondrat</p>
+        <a
+          class="text git"
+          target="”_blank”"
+          href="https://github.com/SavanDalage"
+          >GitHub</a
+        >
+      </footer>
+    </div>
+
+    <!-- okno sprzętu -->
+    <div
+      class="equipment"
+      id="equipment"
+      onclick="document.getElementById(`equipment`).classList.remove(`equ-visible`);"
+    >
+      <div class="equipment-window">
+        <div class="img-con">
+          <img class="equipment-img" id="equipment-img" src="#" />
+        </div>
+        <div>
+          <div class="equipment-description text" id="eq-des"></div>
+          <div class="equipment-description text" id="eq-des-2"></div>
+          <div class="equipment-description text" id="eq-des-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- formularz -->
+    <div class="form" id="for">
+      <div class="window">
+        <div class="mainheading">FORMULARZ</div>
+        <div class="text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis itaque
+          repudiandae laborum molestias qui dolore hic dolor nemo, saepe
+          laudantium odit et aliquam repellendus ea quidem? Itaque id sunt
+          placeat.
+        </div>
+        <div
+          class="button-main but4"
+          type="button"
+          onclick="document.getElementById('for').classList.toggle(`open`);"
+        >
+          Zamknij
+        </div>
+      </div>
+    </div>
+
+    <!-- GALERIA -->
+    <div class="galeria" id="gall">
+      <div class="window">
+        <div class="photos">
+          <input type="checkbox" id="btnControl" />
+          <label class="box" for="btnControl">
+            <img class="photo " src="img/p00.jpg" background-image:
+            url(img/f00.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl1" />
+          <label class="box" for="btnControl1">
+            <img class="photo " src="img/p01.jpg" background-image:
+            url(img/f01.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl2" />
+          <label class="box" for="btnControl2">
+            <img class="photo " src="img/p02.jpg" background-image:
+            url(img/f02.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl3" />
+          <label class="box" for="btnControl3">
+            <img class="photo " src="img/p03.jpg" background-image:
+            url(img/f03.jpg) />
+          </label>
+
+          <input type="checkbox" id="btnControl4" />
+          <label class="box" for="btnControl4">
+            <img class="photo " src="img/p04.jpg" background-image:
+            url(img/f04.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl5" />
+          <label class="box" for="btnControl5">
+            <img class="photo " src="img/p05.jpg" background-image:
+            url(img/f05.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl6" />
+          <label class="box" for="btnControl6">
+            <img class="photo " src="img/p06.jpg" background-image:
+            url(img/f06.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl7" />
+          <label class="box" for="btnControl7">
+            <img class="photo" src="img/p07.jpg" background-image:
+            url(img/f07.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl8" />
+          <label class="box" for="btnControl8">
+            <img class="photo " src="img/p08.jpg" background-image:
+            url(img/f08.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl9" />
+          <label class="box" for="btnControl9">
+            <img class="photo " src="img/p09.jpg" background-image:
+            url(img/f09.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl10" />
+          <label class="box" for="btnControl10">
+            <img class="photo " src="img/p10.jpg" background-image:
+            url(img/f10.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl11" />
+          <label class="box" for="btnControl11">
+            <img class="photo " src="img/p11.jpg" background-image:
+            url(img/f11.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl12" />
+          <label class="box" for="btnControl12">
+            <img class="photo " src="img/p12.jpg" background-image:
+            url(img/f12.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl13" />
+          <label class="box" for="btnControl13">
+            <img class="photo " src="img/p13.jpg" background-image:
+            url(img/f13.jpg)/>
+          </label>
+
+          <input type="checkbox" id="btnControl14" />
+          <label class="box" for="btnControl14">
+            <img class="photo " src="img/p14.jpg" background-image:
+            url(img/f14.jpg)/>
+          </label>
+        </div>
+        <div
+          class="button-main"
+          type="button"
+          onclick="document.getElementById('gall').classList.toggle(`open`);"
+        >
+          Zamknij
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/script.js"></script>
+</html>
