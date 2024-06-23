@@ -14,7 +14,7 @@ function highlight(event) {
   event.target.classList.add("highlighted");
 }
 
-// dla array klawiszy lisner kliknięcia. Podświetla klawisze i na podstawie klikniętego klawisza przywołuję odpowiednią stronę
+// dla array klawiszy listener kliknięcia. Podświetla klawisze i na podstawie klikniętego klawisza przywołuję odpowiednią stronę
 buttonsArray.forEach((button, index) => {
   button.addEventListener("click", (event) => {
     highlight(event);
@@ -46,7 +46,7 @@ function handleIntersect(entries) {
 
 // tworzy Intersection Observer
 var observer = new IntersectionObserver(intersectionCallback, {
-  threshold: 0.5, // Trigger kiedy 50% jest widoczne
+  threshold: 0.3, // Trigger kiedy 50% jest widoczne
 });
 
 // tworzy Intersection Observer dla zmiany opacity
