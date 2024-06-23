@@ -119,6 +119,7 @@ body {
   top: min(100dvh - 85dvh, 50dvh);
   left: 1rem;
   color: #555;
+  height: 100dvh;
 }
 
 .navigation-button {
@@ -540,5 +541,14 @@ body {
 @media (max-height: 600px) {
   .side-navigation-bar {
     top: min(100dvh - 99dvh, 50dvh);
+  }
+
+  .sidebar {
+    width: 6rem;
+    height: 400px;
+  }
+
+  .side-navigation-bar {
+    flex-wrap: wrap;
   }
 }

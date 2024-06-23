@@ -36,40 +36,54 @@ function intersectionCallback(entries) {
 }
 
 // Intersection Observer callback dla opacity
+
 function handleIntersect(entries) {
+  const isSmallScreen = matchMedia(
+    "only screen and (max-height: 500px)"
+  ).matches;
+
   entries.forEach((entry) => {
     const ratio = entry.intersectionRatio;
-    const opacity = Math.min(ratio * 2, 1); // obliczanie opacity na podstawie intersection ratio
+    let opacity;
+    if (isSmallScreen) {
+      opacity = ratio > 0.4 ? 1 : ratio * 5; // Full opacity if more than 20% visible
+    } else {
+      opacity = Math.min(ratio * 2, 1); // Calculate opacity based on intersection ratio
+    }
     entry.target.style.opacity = opacity;
   });
 }
 
-// tworzy Intersection Observer
+// Funkcja tworząca Intersection Observer
+function createObservers() {
+  let threshold;
+  if (matchMedia("only screen and (max-height: 500px)").matches) {
+    threshold = 0.1; // Trigger kiedy 10% jest widoczne
+  } else {
+    threshold = 0.5; // Trigger kiedy 50% jest widoczne
+  }
 
-if (matchMedia("only screen and (min-height: 500px)").matches) {
-  var observer = new IntersectionObserver(intersectionCallback, {
-    threshold: 0.3, // Trigger kiedy 50% jest widoczne
+  // Create Intersection Observer with the determined threshold
+  const observer = new IntersectionObserver(intersectionCallback, {
+    threshold: threshold,
   });
-} else {
-  var observer = new IntersectionObserver(intersectionCallback, {
-    threshold: 0.5, // Trigger kiedy 50% jest widoczne
+
+  // Create Intersection Observer for changing opacity
+  const observerOpacity = new IntersectionObserver(handleIntersect, {
+    threshold: Array.from({ length: 101 }, (v, i) => i * 0.01), // Thresholds od 0% do 100%
+  });
+
+  // Observe każdą page
+  Array.from(pages).forEach((page) => {
+    observer.observe(page);
+    observerOpacity.observe(page);
   });
 }
 
-var observer = new IntersectionObserver(intersectionCallback, {
-  threshold: 0.3, // Trigger kiedy 50% jest widoczne
-});
-
-// tworzy Intersection Observer dla zmiany opacity
-var observerOpacity = new IntersectionObserver(handleIntersect, {
-  threshold: Array.from({ length: 101 }, (v, i) => i * 0.01), // Thresholds od 0% do 100%
-});
-
-// Observe dla każdej page
-Array.from(pages).forEach((page) => {
-  observer.observe(page);
-  observerOpacity.observe(page);
-});
+// Initial observer creation
+createObservers();
+// sprawdzanie zmiany wysokości strony
+window.addEventListener("resize", createObservers);
 
 // SPRZĘT DO ĆWICZEŃ
 
