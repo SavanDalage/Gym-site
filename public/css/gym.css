@@ -41,6 +41,14 @@ body {
 /* Reusable code */
 /* ****************************** */
 
+.padding-left-3rem {
+  padding-left: 3rem;
+}
+
+.center {
+  margin: 0 auto;
+}
+
 .mainheading {
   font-size: 5.2rem;
   font-weight: 700;
@@ -68,50 +76,6 @@ body {
   padding-right: 2rem;
 }
 
-#btnControl,
-#btnControl1,
-#btnControl2,
-#btnControl3,
-#btnControl4,
-#btnControl5,
-#btnControl6,
-#btnControl7,
-#btnControl8,
-#btnControl9,
-#btnControl10,
-#btnControl11,
-#btnControl12,
-#btnControl13,
-#btnControl14 {
-  display: none;
-}
-
-#btnControl:checked + label > img,
-#btnControl1:checked + label > img,
-#btnControl2:checked + label > img,
-#btnControl3:checked + label > img,
-#btnControl4:checked + label > img,
-#btnControl5:checked + label > img,
-#btnControl6:checked + label > img,
-#btnControl7:checked + label > img,
-#btnControl8:checked + label > img,
-#btnControl9:checked + label > img,
-#btnControl10:checked + label > img,
-#btnControl11:checked + label > img,
-#btnControl12:checked + label > img,
-#btnControl13:checked + label > img,
-#btnControl14:checked + label > img {
-  width: 100%;
-  /* height: auto; */
-  object-fit: cover;
-  z-index: 2;
-  position: fixed;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  left: 0px;
-  top: 0px;
-}
-
 /* ****************************** */
 /* MAIN NAV MENU */
 /* ****************************** */
@@ -126,7 +90,7 @@ body {
   flex-direction: column;
   position: fixed;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 500;
   gap: 1rem;
   top: min(100dvh - 85dvh, 50dvh);
   left: 1rem;
@@ -207,6 +171,7 @@ body {
   font-weight: 700;
   margin: 5rem auto;
   transition: all 0.5s ease-in-out;
+  text-decoration: none;
 }
 
 .button-main:hover {
@@ -333,19 +298,13 @@ body {
 }
 
 /* ****************************** */
-/* FORMULARZ  &  GALERIA*/
+/* FORMULARZ */
 /* ****************************** */
 
 .form {
   position: absolute;
   width: 100vw;
   height: 100rem;
-  background-color: rgb(0, 0, 0, 0.9);
-  display: none;
-}
-.galeria {
-  position: absolute;
-  width: 100%;
   background-color: rgb(0, 0, 0, 0.9);
   display: none;
 }
@@ -380,16 +339,33 @@ body {
   align-items: center;
 }
 
-.photos {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto;
-  gap: 1rem;
+/* ****************************** */
+/* GALERIA*/
+/* ****************************** */
+
+.galeria {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  object-fit: cover;
+}
+
+.galeria-inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 
 .box {
@@ -397,25 +373,38 @@ body {
   height: 15rem;
 }
 
-.box img {
-  display: block;
+/* ZDJĘCIE POWIĘKSZONE */
+
+.gallery-image-box {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* height: auto; */
+  background-color: black;
+}
+
+.image-box {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* ****************************** */
 /* SPRZĘT */
 /* OKNO SPRZĘTU PO OTWARCIU */
+/* ****************************** */
 
 .equipment {
   display: none;
   position: absolute;
-  width: 100%;
-  height: auto;
+  width: 100dvw;
+  height: 100dvh;
   background-color: black;
 }
 
 .equipment-img {
+  display: inline-block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -446,7 +435,9 @@ body {
   transition: all 0.5s;
 }
 
+/* ****************************** */
 /* FOOTER */
+/* ****************************** */
 
 .footer {
   height: 5rem;
@@ -467,7 +458,9 @@ body {
   text-decoration: none;
 }
 
+/* ****************************** */
 /* ZMIANA SZEROKOŚCI OKNA */
+/* ****************************** */
 
 @media (max-width: 900px) {
   .mainheading {

@@ -97,13 +97,9 @@
           >
             Zapisz się
           </div>
-          <div
-            class="button-main but3"
-            type="button"
-            onclick="document.getElementById('gall').classList.toggle(`open`);"
-          >
+          <a class="button-main but3" type="button" href="gallery.html">
             Galeria
-          </div>
+          </a>
         </div>
       </div>
 
@@ -159,7 +155,12 @@
     >
       <div class="equipment-window">
         <div class="img-con">
-          <img class="equipment-img" id="equipment-img" src="#" />
+          <img
+            class="equipment-img"
+            id="equipment-img"
+            src="#"
+            loading="lazy"
+          />
         </div>
         <div>
           <div class="equipment-description text" id="eq-des"></div>
@@ -183,95 +184,6 @@
           class="button-main but4"
           type="button"
           onclick="document.getElementById('for').classList.toggle(`open`);"
-        >
-          Zamknij
-        </div>
-      </div>
-    </div>
-
-    <!-- GALERIA -->
-    <div class="galeria" id="gall">
-      <div class="inner-window">
-        <div class="photos">
-          <input type="checkbox" id="btnControl" />
-          <label class="box" for="btnControl">
-            <img class="photo" src="img/p00.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl1" />
-          <label class="box" for="btnControl1">
-            <img class="photo " src="img/p01.jpg"/ >
-          </label>
-
-          <input type="checkbox" id="btnControl2" />
-          <label class="box" for="btnControl2">
-            <img class="photo " src="img/p02.jpg"/ >
-          </label>
-
-          <input type="checkbox" id="btnControl3" />
-          <label class="box" for="btnControl3">
-            <img class="photo" src="img/p03.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl4" />
-          <label class="box" for="btnControl4">
-            <img class="photo" src="img/p04.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl5" />
-          <label class="box" for="btnControl5">
-            <img class="photo" src="img/p05.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl6" />
-          <label class="box" for="btnControl6">
-            <img class="photo" src="img/p06.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl7" />
-          <label class="box" for="btnControl7">
-            <img class="photo" src="img/p07.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl8" />
-          <label class="box" for="btnControl8">
-            <img class="photo" src="img/p08.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl9" />
-          <label class="box" for="btnControl9">
-            <img class="photo" src="img/p09.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl10" />
-          <label class="box" for="btnControl10">
-            <img class="photo" src="img/p10.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl11" />
-          <label class="box" for="btnControl11">
-            <img class="photo" src="img/p11.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl12" />
-          <label class="box" for="btnControl12">
-            <img class="photo" src="img/p12.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl13" />
-          <label class="box" for="btnControl13">
-            <img class="photo" src="img/p13.jpg" />
-          </label>
-
-          <input type="checkbox" id="btnControl14" />
-          <label class="box" for="btnControl14">
-            <img class="photo" src="img/p14.jpg" />
-          </label>
-        </div>
-        <div
-          class="button-main"
-          type="button"
-          onclick="document.getElementById('gall').classList.toggle(`open`);"
         >
           Zamknij
         </div>

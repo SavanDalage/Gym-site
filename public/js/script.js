@@ -50,11 +50,11 @@ function handleIntersect(entries) {
     const ratio = entry.intersectionRatio;
     let opacity;
     if (isSmallScreen) {
-      opacity = ratio > 0.1 ? 1 : ratio * 10; // Full opacity if more than 10% visible
+      opacity = ratio > 0.1 ? 1 : ratio * 10; // Pełna opacity gdy conajmniej 10% jest widoczne
     } else if (isNarrowScreen) {
-      opacity = ratio > 0.05 ? 1 : ratio * 10; // Adjust for tall pages on narrow screens
+      opacity = ratio > 0.05 ? 1 : ratio * 10; // Likwiduje poroblem z opacity na telefonach, gdzie druga strona będzie wąska, ale wysoka
     } else {
-      opacity = Math.min(ratio * 2, 1); // Calculate opacity based on intersection ratio
+      opacity = Math.min(ratio * 2, 1); // Kalkuluje opacity na podstawie intersection ratio
     }
     entry.target.style.opacity = opacity;
   });
@@ -66,22 +66,22 @@ function createObservers() {
   if (matchMedia("only screen and (max-height: 500px)").matches) {
     threshold = 0.1; // Trigger kiedy 10% jest widoczne
   } else if (matchMedia("only screen and (max-width: 800px)").matches) {
-    threshold = 0.05; // Trigger when 5% is visible for narrow screens
+    threshold = 0.05; // Trigger kiedy 5% jest widoczne; dla wąskich ekranów
   } else {
     threshold = 0.5; // Trigger kiedy 50% jest widoczne
   }
 
-  // Create Intersection Observer with the determined threshold
+  // Create Intersection Observer dla ustalonego treshold
   const observer = new IntersectionObserver(intersectionCallback, {
     threshold: threshold,
   });
 
-  // Create Intersection Observer for changing opacity
+  // Create Intersection Observer dla zmiany opacity
   const observerOpacity = new IntersectionObserver(handleIntersect, {
     threshold: Array.from({ length: 101 }, (v, i) => i * 0.01), // Thresholds od 0% do 100%
   });
 
-  // Observe każdą page
+  // Observe for each page
   Array.from(pages).forEach((page) => {
     observer.observe(page);
     observerOpacity.observe(page);
@@ -101,7 +101,7 @@ function newPath(path, replacement) {
   return firstPart + replacement + lastPart;
 }
 
-async function opisSprzetu() {
+async function opisSprzętu() {
   try {
     const response = await fetch("eq.json");
     const textMapping = await response.json();
@@ -132,4 +132,4 @@ async function opisSprzetu() {
   }
 }
 
-opisSprzetu();
+opisSprzętu();
