@@ -86,6 +86,7 @@ body {
 }
 
 .side-navigation-bar {
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -95,7 +96,6 @@ body {
   top: min(100dvh - 85dvh, 50dvh);
   left: 1rem;
   color: #b6b6b6;
-  height: 100dvh;
 }
 
 .navigation-button {
@@ -133,23 +133,21 @@ body {
 
 .container {
   width: 100%;
-  /* height: 100%; */
+  height: 100dvh;
   position: relative;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  transition: all 1s ease-in-out;
   padding-right: 3rem;
 }
 
 .page {
-  /* max-width: 62.5rem; */
   max-width: 100rem;
   min-width: 27.7rem;
-  min-height: 60rem;
 
   margin: 40px auto;
 
-  scroll-snap-align: center;
+  transition: all 0.5s ease-in-out;
+
   border: 1px solid rgb(255, 81, 0);
 }
 
@@ -187,14 +185,14 @@ body {
 #p1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 .hero-box {
-  min-height: 600px;
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  /* padding-right: 1.9rem; */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-photo {
 }
 
 /* ****************************** */
@@ -257,17 +255,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.window {
-  display: flex;
-  justify-content: center;
-  /* flex-wrap: wrap; */
-
-  width: 100%;
-  overflow: hidden;
-  gap: 0.3rem;
-  margin-bottom: 5rem;
-}
-
 .gear-img {
   width: 150px;
   height: 600px;
@@ -287,31 +274,17 @@ body {
 }
 
 .bold {
-  /* margin: 2rem 0 2rem 2rem; */
   font-size: 1.4rem;
   color: rgb(255, 81, 0);
   font-weight: 700;
 }
 
-#p4 {
-  min-height: 800px;
-}
-
 /* ****************************** */
-/* FORMULARZ */
+/* OKNO SPRZĘTU */
 /* ****************************** */
-
-.form {
-  position: absolute;
-  width: 100vw;
-  height: 100rem;
-  background-color: rgb(0, 0, 0, 0.9);
-  display: none;
-}
 
 .window-gear {
   width: 100%;
-  /* height: 100vh; */
   padding: 2rem 0 5rem 0;
   left: 0;
   right: 0;
@@ -322,9 +295,19 @@ body {
   justify-content: center;
 }
 
+/* ****************************** */
+/* FORMULARZ */
+/* ****************************** */
+
+.form {
+  position: absolute;
+  width: 100dvw;
+  height: 100rem;
+  background-color: rgb(0, 0, 0, 0.9);
+  display: none;
+}
+
 .inner-window {
-  /* width: 100vw; */
-  /* height: 100vh; */
   padding-top: 5rem;
   left: 0;
   right: 0;
@@ -347,7 +330,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  background-color: black;
+  background-color: rgb(0, 0, 0, 0.7);
   object-fit: cover;
 }
 
@@ -360,7 +343,7 @@ body {
   margin-top: 1rem;
 }
 
-.box img {
+.photo {
   display: block;
   width: 100%;
   height: 100%;
@@ -368,7 +351,7 @@ body {
   object-fit: cover;
 }
 
-.box {
+.photo-box {
   width: 14rem;
   height: 15rem;
 }
@@ -378,16 +361,12 @@ body {
 .gallery-image-box {
   display: none;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  /* height: auto; */
   background-color: black;
+  margin-right: -500px;
 }
 
-.image-box {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.gallery-image {
+  float: right;
 }
 
 /* ****************************** */
@@ -433,6 +412,14 @@ body {
   width: 100%;
   height: 100%;
   transition: all 0.5s;
+}
+
+/* ****************************** */
+/* PAGE FOUR - CENNIK */
+/* ****************************** */
+
+#p4 {
+  min-height: 800px;
 }
 
 /* ****************************** */
@@ -542,7 +529,7 @@ body {
 
   .sidebar {
     width: 6rem;
-    height: 400px;
+    /* height: 400px; */
   }
 
   .side-navigation-bar {
