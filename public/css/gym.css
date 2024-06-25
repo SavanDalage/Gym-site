@@ -361,6 +361,7 @@ body {
 .gallery-image-box {
   display: none;
   position: absolute;
+  height: 100%;
   background-color: black;
   margin-right: -1000px;
 }
