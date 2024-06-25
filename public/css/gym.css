@@ -361,8 +361,10 @@ body {
 .gallery-image-box {
   display: none;
   position: absolute;
+  height: auto;
+  width: auto;
   background-color: black;
-  margin-right: -500px;
+  margin-right: -1000px;
 }
 
 .gallery-image {
