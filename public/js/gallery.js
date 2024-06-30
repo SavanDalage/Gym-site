@@ -14,14 +14,6 @@ function opisSprzętu() {
     img.addEventListener("click", function () {
       document.getElementById("gallery-image-box").classList.add("equ-visible");
 
-      console.log(document.getElementById("gallery-image-box"));
-
-      console.log("is clicked");
-
-      console.log(document.getElementById("gallery-image"));
-
-      console.log(this.src);
-
       document
         .getElementById("gallery-image")
         .setAttribute("src", newPath(this.src, "p"));

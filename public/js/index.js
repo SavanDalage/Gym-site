@@ -98,12 +98,13 @@ window.addEventListener("resize", createObservers);
 function newPath(path, replacement) {
   let firstPart = path.substring(0, path.length - 7);
   let lastPart = path.substring(path.length - 6, path.length);
+
   return firstPart + replacement + lastPart;
 }
 
 async function opisSprzętu() {
   try {
-    const response = await fetch("eq.json");
+    const response = await fetch("json/eq.json");
     const textMapping = await response.json();
     // const textMapping2 = CSSJSON.toCSS(textMapping);
     const images = document.querySelectorAll(".gear-img");

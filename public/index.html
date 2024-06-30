@@ -13,7 +13,8 @@
 
     <title>Gym</title>
 
-    <link rel="stylesheet" href="css/gym.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
 
   <body>
@@ -91,13 +92,10 @@
           </div>
         </div>
         <div class="p2-buttons-box">
-          <div
-            class="button-main but2"
-            type="button"
-            onclick="document.getElementById('for').classList.toggle(`open`);"
-          >
+          <a class="button-main but2" type="button" href="formularz.html">
             Zapisz się
-          </div>
+          </a>
+
           <a class="button-main but3" type="button" href="gallery.html">
             Galeria
           </a>
@@ -168,29 +166,10 @@
           <div class="equipment-description text" id="eq-des-2"></div>
           <div class="equipment-description text" id="eq-des-3"></div>
         </div>
-      </div>
-    </div>
-
-    <!-- formularz -->
-    <div class="form" id="for">
-      <div class="inner-window">
-        <div class="mainheading">FORMULARZ</div>
-        <div class="text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis itaque
-          repudiandae laborum molestias qui dolore hic dolor nemo, saepe
-          laudantium odit et aliquam repellendus ea quidem? Itaque id sunt
-          placeat.
-        </div>
-        <div
-          class="button-main but4"
-          type="button"
-          onclick="document.getElementById('for').classList.toggle(`open`);"
-        >
-          Zamknij
-        </div>
+        <p class="zamknij text">Kliknij w dowolnym miejscu, by zamknąć okno.</p>
       </div>
     </div>
   </body>
 
-  <script src="js/script.js"></script>
+  <script src="js/index.js"></script>
 </html>
