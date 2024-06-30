@@ -14,9 +14,7 @@ app.use(express.static(publicPath));
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cors()); // Enable CORS for all routes
 
-const SENDGRID_API_KEY =
-  "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";
-sgMail.setApiKey(SENDGRID_API_KEY);
+sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
 app.post("/forms", (req, res) => {
