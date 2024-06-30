@@ -4,8 +4,6 @@ const sgMail = require("@sendgrid/mail");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-sgMail.setApiKey(SENDGRID_API_KEY);
-
 /////////////////////////////////////////
 
 app.post("/forms", (req, res) => {
