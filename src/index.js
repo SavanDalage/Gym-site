@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
+// const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
 
 const app = express();
@@ -10,7 +10,8 @@ const publicPath = path.join(__dirname, "../public");
 
 app.use(express.static(publicPath));
 app.use(express.json()); // Middleware to parse JSON bodies
-app.use(cors()); // Enable CORS for all routes
+// app.use(cors());
+// Enable CORS for all routes
 
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
