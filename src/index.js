@@ -24,7 +24,7 @@ app.post("/forms", (req, res) => {
   const data = req.body;
 
   const emailData = {
-    to: "nekomimiwolf@gmial.com",
+    to: "nekomimiwolf@gmail.com",
     from: "silownia@peferek.com",
     subject: "Formularz Treningowy - Zgłoszenie",
     text: "New form submission",
