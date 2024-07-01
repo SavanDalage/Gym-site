@@ -12,43 +12,38 @@ app.use(express.static(publicPath));
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(cors()); // Enable CORS for all routes
 
-// Verify SendGrid API key
-if (!process.env.SENDGRID_PASSWORD) {
-  console.error("SendGrid API key is not set!");
-  process.exit(1);
-}
-
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
-app.post("/forms", async (req, res) => {
+app.post("/forms", (req, res) => {
   console.log("Request received at /forms");
   const data = req.body;
 
   console.log("Form data received:", data);
 
-  // Temporarily respond without sending email for troubleshooting
-  try {
-    const emailData = {
-      to: "nekomimiwolf@gmial.com",
-      from: "silownia@peferek.com",
-      subject: "Formularz Treningowy - Zgłoszenie",
-      text: "New form submission",
-      html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
-    };
+  const emailData = {
+    to: "nekomimiwolf@gmail.com",
+    from: "silownia@peferek.com",
+    subject: "Formularz Treningowy - Zgłoszenie",
+    text: "New form submission",
+    html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
+  };
 
-    await sgMail.send(emailData);
-    console.log("Email sent successfully");
-    res.status(200).json({ message: "Email sent successfully" });
-  } catch (error) {
-    console.error(
-      "Error sending email:",
-      error.response ? error.response.body : error
-    );
-    res
-      .status(500)
-      .json({ message: "Error sending email", error: error.toString() });
-  }
+  sgMail
+    .send(emailData)
+    .then(() => {
+      console.log("Email sent successfully");
+      res.status(200).json({ message: "Email sent successfully" });
+    })
+    .catch((error) => {
+      console.error(
+        "Error sending email:",
+        error.response ? error.response.body : error
+      );
+      res
+        .status(500)
+        .json({ message: "Error sending email", error: error.toString() });
+    });
 });
 
 // Serve the HTML page
