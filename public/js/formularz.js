@@ -1,4 +1,4 @@
-form.addEventListener("submit", function (event) {
+document.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const formData = new FormData(form);
