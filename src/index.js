@@ -15,7 +15,7 @@ app.use(cors()); // Enable CORS for all routes
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
-app.post("/forms", async (req, res) => {
+app.get("/forms", async (req, res) => {
   console.log("Request received at /forms");
   const data = req.body;
 

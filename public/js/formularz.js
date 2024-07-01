@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("Form data:", data);
 
     fetch("/forms", {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
