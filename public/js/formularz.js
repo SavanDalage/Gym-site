@@ -1,5 +1,3 @@
-//formularz.js
-
 document.addEventListener("DOMContentLoaded", (event) => {
   const form = document.getElementById("training-form");
   const resetBtn = document.getElementById("reset-btn");
@@ -35,6 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       body: JSON.stringify(data),
     })
       .then((response) => {
+        console.log("Response status:", response.status);
         if (!response.ok) {
           throw new Error(`Network response was not ok ${response.statusText}`);
         }
