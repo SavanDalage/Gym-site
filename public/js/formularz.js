@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("Form data:", data);
 
     fetch("/forms", {
-      mode: "no-cors",
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
