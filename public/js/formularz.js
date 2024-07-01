@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       headers: {
         "Content-Type": "application/json",
       },
-      // body: JSON.stringify(data),
-      body: "JSON.stringify(data)",
+      body: JSON.stringify(data),
+      // body: "JSON.stringify(data)",
     })
       .then((response) => {
         console.log("Response body:", response);
