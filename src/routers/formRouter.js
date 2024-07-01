@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 /////////////////////////////////////////
+/////////////////////////////////////////
 
 app.post("/forms", (req, res) => {
   const data = req.body;
@@ -28,6 +29,7 @@ app.post("/forms", (req, res) => {
 
   ses.sendEmail(emailParams, (err, data) => {
     if (err) {
+      console.error(err);
       console.error(err);
       res.status(500).send("Error sending email");
     } else {
