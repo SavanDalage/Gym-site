@@ -25,16 +25,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     console.log("Form data:", data);
 
-    fetch(
-      "/forms"
-      //   , {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // }
-    )
+    fetch("/forms", {
+      mode: "no-cors",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
       .then((response) => {
         console.log("Response body:", response);
         console.log("Response status:", response.status);
