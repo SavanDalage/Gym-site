@@ -1,5 +1,3 @@
-//Index.js
-
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -17,11 +15,11 @@ app.use(cors()); // Enable CORS for all routes
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
-// POST endpoint to handle form submissions
-// POST endpoint to handle form submissions
 app.post("/forms", (req, res) => {
   console.log("Request received at /forms");
   const data = req.body;
+
+  console.log("Form data received:", data);
 
   const emailData = {
     to: "nekomimiwolf@gmail.com",
@@ -34,10 +32,14 @@ app.post("/forms", (req, res) => {
   sgMail
     .send(emailData)
     .then(() => {
+      console.log("Email sent successfully");
       res.status(200).json({ message: "Email sent successfully" });
     })
     .catch((error) => {
-      console.error(error);
+      console.error(
+        "Error sending email:",
+        error.response ? error.response.body : error
+      );
       res
         .status(500)
         .json({ message: "Error sending email", error: error.toString() });
