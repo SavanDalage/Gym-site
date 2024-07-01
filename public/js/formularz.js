@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       body: JSON.stringify(data),
     })
       .then((response) => {
+        console.log("Response body:", response);
         console.log("Response status:", response.status);
         if (!response.ok) {
           throw new Error(`Network response was not ok ${response.statusText}`);

@@ -15,35 +15,33 @@ app.use(cors()); // Enable CORS for all routes
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
-app.post("/forms", (req, res) => {
+app.post("/forms", async (req, res) => {
   console.log("Request received at /forms");
   const data = req.body;
 
   console.log("Form data received:", data);
 
-  const emailData = {
-    to: "nekomimiwolf@gmail.com",
-    from: "silownia@peferek.com",
-    subject: "Formularz Treningowy - Zgłoszenie",
-    text: "New form submission",
-    html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
-  };
+  try {
+    const emailData = {
+      to: "nekomimiwolf@gmail.com",
+      from: "silownia@peferek.com",
+      subject: "Formularz Treningowy - Zgłoszenie",
+      text: "New form submission",
+      html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
+    };
 
-  sgMail
-    .send(emailData)
-    .then(() => {
-      console.log("Email sent successfully");
-      res.status(200).json({ message: "Email sent successfully" });
-    })
-    .catch((error) => {
-      console.error(
-        "Error sending email:",
-        error.response ? error.response.body : error
-      );
-      res
-        .status(500)
-        .json({ message: "Error sending email", error: error.toString() });
-    });
+    await sgMail.send(emailData);
+    console.log("Email sent successfully");
+    res.status(200).json({ message: "Email sent successfully" });
+  } catch (error) {
+    console.error(
+      "Error sending email:",
+      error.response ? error.response.body : error
+    );
+    res
+      .status(500)
+      .json({ message: "Error sending email", error: error.toString() });
+  }
 });
 
 // Serve the HTML page
