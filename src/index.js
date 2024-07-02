@@ -1,19 +1,37 @@
+// indexedDB.js
+
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-// const cors = require("cors");
+const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
 
+// const jsonServer = require("json-server");
 const app = express();
 const port = process.env.PORT || 5500;
 const publicPath = path.join(__dirname, "../public");
+
+// const server = jsonServer.create();
+// const middlewares = jsonServer.defaults();
 
 app.use(express.static(publicPath));
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cors());
-// Enable CORS for all routes
+app.use(cors()); // Enable CORS for all routes
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Allow any origin
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
