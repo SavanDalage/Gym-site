@@ -4,7 +4,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const sgMail = require("@sendgrid/mail");
+// const sgMail = require("@sendgrid/mail");
 
 const app = express();
 const port = process.env.PORT || 5500;
@@ -29,9 +29,9 @@ app.use((req, res, next) => {
   next();
 });
 
-console.log("SendGrid pass: " + process.env.SENDGRID_PASSWORD);
+// console.log("SendGrid pass: " + process.env.SENDGRID_PASSWORD);
 
-sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
+// sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
 app.post("/forms", async (req, res) => {
