@@ -40,27 +40,27 @@ app.post("/forms", async (req, res) => {
 
   console.log("Form data received:", data);
 
-  try {
-    const emailData = {
-      to: "nekomimiwolf@gmail.com",
-      from: "silownia@peferek.com",
-      subject: "Formularz Treningowy - Zgłoszenie",
-      text: "New form submission",
-      html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
-    };
+  // try {
+  //   const emailData = {
+  //     to: "nekomimiwolf@gmail.com",
+  //     from: "silownia@peferek.com",
+  //     subject: "Formularz Treningowy - Zgłoszenie",
+  //     text: "New form submission",
+  //     html: `<pre>${JSON.stringify(data, null, 2)}</pre>`,
+  //   };
 
-    await sgMail.send(emailData);
-    console.log("Email sent successfully");
-    res.status(200).json({ message: "Email sent successfully" });
-  } catch (error) {
-    console.error(
-      "Error sending email:",
-      error.response ? error.response.body : error
-    );
-    res
-      .status(500)
-      .json({ message: "Error sending email", error: error.toString() });
-  }
+  //   await sgMail.send(emailData);
+  //   console.log("Email sent successfully");
+  //   res.status(200).json({ message: "Email sent successfully" });
+  // } catch (error) {
+  //   console.error(
+  //     "Error sending email:",
+  //     error.response ? error.response.body : error
+  //   );
+  //   res
+  //     .status(500)
+  //     .json({ message: "Error sending email", error: error.toString() });
+  // }
 });
 
 // Serve the HTML page
