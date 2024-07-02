@@ -29,6 +29,8 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log("SendGrid pass: " + process.env.SENDGRID_PASSWORD);
+
 sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
 
 // POST endpoint to handle form submissions
