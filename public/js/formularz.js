@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     console.log("Form data:", data);
+    console.log("Form data:", data);
 
     fetch("/forms", {
       method: "POST",
