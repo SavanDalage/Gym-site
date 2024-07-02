@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     form.reset();
   });
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
@@ -34,19 +34,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => {
-        console.log("Response body:", response);
+      .then(async (response) => {
         console.log("Response status:", response.status);
         if (!response.ok) {
-          throw new Error(`Network response was not ok ${response.statusText}`);
+          // Attempt to parse the error message from the response
+          const errorMessage = await response.text();
+          throw new Error(
+            `Network response was not ok: ${response.statusText}, Message: ${errorMessage}`
+          );
         }
         return response.json();
       })
       .then((data) => {
         console.log("Success:", data);
+        // Optionally show a success message to the user
+        alert("Form submitted successfully!");
       })
       .catch((error) => {
         console.error("Error:", error);
+        // Optionally show an error message to the user
+        alert(`Error submitting form: ${error.message}`);
       });
   });
 });

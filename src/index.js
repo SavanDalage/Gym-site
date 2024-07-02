@@ -6,13 +6,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
 
-// const jsonServer = require("json-server");
 const app = express();
 const port = process.env.PORT || 5500;
 const publicPath = path.join(__dirname, "../public");
-
-// const server = jsonServer.create();
-// const middlewares = jsonServer.defaults();
 
 app.use(express.static(publicPath));
 app.use(express.json()); // Middleware to parse JSON bodies
